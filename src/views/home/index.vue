@@ -4,6 +4,8 @@
       class="weiPhoto"
       @ready="ready"
       v-wei-photo:photo720="options"
+      :isDeep="true"
+      :isAuto="true"
       :panorama.sync="panorama">
       <template
         slot="loading"
