@@ -1,6 +1,5 @@
 <template>
   <div>
-    <ui-audio :url="audio"></ui-audio>
     <wei-photo
       v-if="isFresh"
       class="weiPhoto"
@@ -50,18 +49,14 @@
 
 <script>
 import { screenList } from './conf.js'
-import uiAudio from '@/components/audio'
 
 export default {
   name: 'Home',
-  components: {
-    uiAudio
-  },
+  components: {},
   data: () => ({
     isFresh: true,
     isPin: false,
     screens: JSON.parse(JSON.stringify(screenList)),
-    audio: require('@/assets/audio-home.mp3'),
     screenId: 0,
     panorama: '',
     options: {},
