@@ -1,7 +1,5 @@
 import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'
-import store from '@/store'
-import { getToken } from '@/utils/auth'
 
 // create an axios instance
 const service = axios.create({
@@ -13,9 +11,6 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-    if (store.getters.token) {
-      config.headers['access-token'] = getToken()
-    }
     config.headers['content-type'] = 'application/x-www-form-urlencoded'
     return config
   },
@@ -41,9 +36,7 @@ service.interceptors.response.use(
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-          store.dispatch('user/resetToken').then(() => {
-            location.reload()
-          })
+          location.reload()
         })
       }
       return Promise.reject(res.error || 'Error')
