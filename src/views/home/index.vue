@@ -50,6 +50,6 @@ export default {
   .weiPhoto {
     width: 100vw;
     height: 100vh;
-    opacity: .1;
+    opacity: .001;
   }
 </style>

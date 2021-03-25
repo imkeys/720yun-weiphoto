@@ -4,16 +4,17 @@ import Vue from 'vue'
 import axios from 'axios'
 import router from './router'
 import App from './App'
-
+// my plugins
 import weiPhoto from 'wei-photo'
-
+// page loading
 import './permission'
-import '@/styles/common.css'
-import '@/styles/animate.css'
+// wei photo style
 import 'wei-photo/style/index.css'
+// my styles
+import '@/skins/common.less'
+import '@/skins/animate.css'
 
 Vue.use(weiPhoto)
-
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
 
