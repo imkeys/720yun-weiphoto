@@ -15,7 +15,8 @@
     "nprogress": "0.2.0",
     "vue": "2.6.11",
     "vuex": "^3.3.0",
-    "wei-photo": "^0.2.4"
+    "wei-photo": "0.2.4",
+    "wei-photo-js": "^1.1.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.1.0",

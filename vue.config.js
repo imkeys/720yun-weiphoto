@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/vue-720yun/',
+  // publicPath: '/vue-720yun/',
   transpileDependencies: [
     'vue-draggable-resizable-gorkys'
   ],
