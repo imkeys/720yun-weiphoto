@@ -1,0 +1,20 @@
+.error-page[data-v-7875d6ae] {
+  height: 100%;
+  background: #eeeeee;
+}
+.error-page .inner[data-v-7875d6ae] {
+  position: relative;
+  top: 30%;
+  text-align: center;
+}
+.error-page .inner .icon img[data-v-7875d6ae] {
+  width: 160px;
+  height: 160px;
+}
+.error-page .inner p[data-v-7875d6ae] {
+  padding: 10px 0 0;
+  line-height: 30px;
+  font-size: 24px;
+  color: #999999;
+}
+

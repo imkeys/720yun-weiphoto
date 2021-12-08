@@ -1,0 +1,43 @@
+.error-page[data-v-85caa1dc] {
+  height: 100%;
+  background: #ffffff;
+}
+.error-page .inner[data-v-85caa1dc] {
+  position: relative;
+  top: 30%;
+  left: 50%;
+  width: 600px;
+  margin: 0 0 0 -300px;
+  overflow: hidden;
+}
+.error-page .inner .text[data-v-85caa1dc] {
+  float: left;
+  width: 400px;
+}
+.error-page .inner .text img[data-v-85caa1dc] {
+  display: block;
+  width: 40px;
+  margin: 0 0 40px 0;
+}
+.error-page .inner .text h3[data-v-85caa1dc] {
+  padding: 0 0 20px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: normal;
+  color: #999999;
+}
+.error-page .inner .text h3 b[data-v-85caa1dc] {
+  color: #333333;
+}
+.error-page .inner .text p[data-v-85caa1dc] {
+  line-height: 24px;
+  font-size: 16px;
+}
+.error-page .inner .icon[data-v-85caa1dc] {
+  float: right;
+}
+.error-page .inner .icon img[data-v-85caa1dc] {
+  width: 171px;
+  height: 213px;
+}
+
