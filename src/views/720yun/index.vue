@@ -28,14 +28,16 @@
     </wei-photo>
     <div class="button">
       <button
-        @click="methodsPanorama"
+        v-for="(item, index) in panoramas"
+        :key="index"
+        @click="methodsPanorama(item)"
         :title="'方法切换场景，带加载进度' + loadNum">
-        <span>场景I</span>
+        <span>场景{{index + 1}}</span>
       </button>
       <button
-        @click="panorama = panorama1"
+        @click="panorama = panorama0"
         title="变量动态切换场景，无法监听加载进度">
-        <span>场景II</span>
+        <span>场景</span>
       </button>
         <button
           @click="autoRota"
@@ -57,14 +59,26 @@ export default {
   data: () => ({
     loadNum: '',
     panorama: '',
-    panorama1: require('@/assets/vr3.jpeg'),
-    panorama2: require('@/assets/vr4.jpeg'),
+    panorama0: require('@/assets/00.jpg'),
+    panoramas: [
+      require('@/assets/01.jpg'),
+      require('@/assets/02.jpg'),
+      require('@/assets/03.jpg'),
+      require('@/assets/04.jpg'),
+      require('@/assets/05.jpeg'),
+      require('@/assets/06.jpeg'),
+      require('@/assets/07.jpeg'),
+      require('@/assets/08.jpeg'),
+      require('@/assets/09.jpeg'),
+      require('@/assets/10.jpg')
+    ],
     animationType: true,
     options: {
       minZoom: 0,
-      maxZoom: 100,
+      maxZoom: 80,
       moveSpeed: 1,
       mousemove: true,
+      mousewheel: false,
       captureCursor: false,
       moveInertia: true
     },
@@ -99,14 +113,13 @@ export default {
   },
   methods: {
     ready () {
-      this.loadImg(cover.imgurl)
       this.photo.setPanorama(this.panorama, (val) => {
         this.loadNum = val
-      }).then(() => {
+      }).then(async () => {
         this.loadNum = 100
+        const origin = await this.loadImg(cover.imgurl)
         setTimeout(() => {
-          // this.photo.autoRota()
-          // this.photo.startAutorotate()
+          this.panorama = origin
         }, 1000)
       })
     },
@@ -125,15 +138,21 @@ export default {
     autoRota () {
       this.photo.autoRota()
     },
-    methodsPanorama () {
-      this.photo.setPanorama(this.panorama2, (val) => {
+    methodsPanorama (imgurl) {
+      this.photo.setPanorama(imgurl, (val) => {
         this.loadNum = val
       }).then(() => {
         this.loadNum = 100
       })
     },
     loadImg (imgurl) {
-      console.log(imgurl)
+      return new Promise((resolve, reject) => {
+        const img = new Image()
+        img.src = imgurl
+        img.onload = function () {
+          resolve(imgurl)
+        }
+      })
     }
   }
 }
