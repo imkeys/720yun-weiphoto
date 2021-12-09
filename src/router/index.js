@@ -8,7 +8,7 @@ Vue.use(Router)
 export const BASIC_ROUTES = [
   {
     path: '/(index)?',
-    component: () => import('@/views/home/index')
+    component: () => import('@/views/720yun/')
   },
   {
     path: '/404',
@@ -34,6 +34,7 @@ export const ASYNC_ROUTES = [
 ]
 
 const createRouter = () => new Router({
+  mode: 'history',
   scrollBehavior: () => ({
     y: 0
   }),
